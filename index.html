@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Convite Erika & Paulo</title>
+
+  <!-- FONTES -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+<!-- ÁUDIO -->
+<audio id="musica" loop>
+  <source src="assets/audio/YouTube_Heaven-Bryan-Adams.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+  <!-- FUNDO -->
+  <div class="bg-wrapper">
+    <img src="assets/img/moto.png" class="bg-img">
+  </div>
+
+  <!-- SCENE 1 -->
+  <div id="scene1" class="scene active">
+    <div class="folha-esquerda"></div>
+
+    <div class="selo-container">
+      <div class="selo"></div>
+      <span class="selo-texto">Clique aqui</span>
+    </div>
+  </div>
+
+  <!-- SCENE 2 -->
+  <div id="scene2" class="scene">
+    <div class="hero">
+      <div class="nome">
+        Erika & <span>Paulo</span>
+      </div>
+      <div class="subtitulo">
+        14 anos de amor, parceria e estrada juntos.
+      </div>
+    </div>
+
+    <div class="nav next" data-next="scene3"></div>
+  </div>
+
+  <!-- SCENE 3 -->
+  <div id="scene3" class="scene">
+    <div class="texto">
+      Depois de quase 14 anos compartilhando a vida, os sonhos e o amor,
+      chegou o momento de oficializarmos a nossa união.
+      <br><br>
+      E não poderíamos viver esse dia tão especial sem você ao nosso lado.
+    </div>
+
+    <div class="nav prev" data-prev="scene2"></div>
+    <div class="nav next" data-next="scene4"></div>
+  </div>
+
+  <!-- SCENE 4 -->
+  <div id="scene4" class="scene">
+    <div class="destaque">
+      Casamento Civil
+      <strong>05 / 06 / 2026 • 11h</strong>
+      Cartório de Silvestre
+    </div>
+
+    <div class="nav prev" data-prev="scene3"></div>
+    <div class="nav next" data-next="scene5"></div>
+  </div>
+
+  <!-- SCENE 5 -->
+  <div id="scene5" class="scene">
+    <div class="final">
+      Após a cerimônia, teremos um almoço especial para confraternizar,
+      celebrar o amor e compartilhar esse momento tão importante ao lado
+      de quem faz parte da nossa história.
+    </div>
+
+    <div class="acoes">
+      <a href="https://www.google.com/maps?q=Sede+MOTO+MASTER&ll=-20.73700996394703,-42.897087623924236&z=17"
+         target="_blank" class="acao">
+        <span class="icone"><i class="fa-solid fa-location-dot"></i></span>
+        <span>Localização</span>
+      </a>
+
+      <a href="#" class="acao" onclick="confirmarPresenca(); return false;">
+        <span class="icone">✔</span>
+        <span>Confirmar</span>
+      </a>
+    </div>
+
+    <div class="nav prev" data-prev="scene4"></div>
+    <div class="nav next" data-next="scene6"></div>
+  </div>
+
+  <!-- SCENE 6 -->
+  <div id="scene6" class="scene">
+
+    <div class="content-scene6">
+
+      <h1 class="destaque">Nos vemos no altar!</h1>
+
+      <div class="destaque">        
+        <strong>05 / 06 / 2026 • 11h</strong>
+        Cartório de Silvestre
+      </div>
+
+      <div class="frame">
+        <img src="assets/img/caricatura.png">
+      </div>
+
+    </div>
+
+    <div class="nav prev" data-prev="scene5"></div>
+
+  </div>
+
+  <!-- RODAPÉ -->
+  <div class="footer-credit">
+    Desenvolvido por
+    <a href="https://www.inovarewebdesign.com" target="_blank">
+      INOVARE WEB DESIGN
+    </a>
+  </div>
+
+</div>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>

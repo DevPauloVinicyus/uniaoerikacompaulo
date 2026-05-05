@@ -1,0 +1,437 @@
+/* =================================================
+   RESET
+================================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    background: #f4f1ea;
+}
+
+/* =================================================
+   CONTAINER
+================================================= */
+.container {
+    width: 100%;
+    height: 100dvh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* =================================================
+   FUNDO
+================================================= */
+.bg-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.2;
+}
+
+/* =================================================
+   SCENES
+================================================= */
+.scene {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    z-index: 0;
+
+    transition: opacity 1s ease;
+}
+
+.scene.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* =================================================
+   SCENE 1 (CARTA)
+================================================= */
+#scene1 {
+    inset: 0;
+}
+
+.folha-esquerda {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 40%;
+    height: 100%;
+
+    background: #ffffff;
+    box-shadow: 20px 0 40px rgba(0,0,0,0.15);
+
+    z-index: 2;
+    transition: transform 1s ease;
+}
+
+.folha-esquerda::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -60px;
+
+    width: 60px;
+    height: 100%;
+
+    background: linear-gradient(
+        to right,
+        rgba(0,0,0,0.15),
+        rgba(0,0,0,0.05),
+        transparent
+    );
+}
+
+/* SELO */
+.selo-container {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    cursor: pointer;
+}
+
+.selo {
+    width: 99px;
+    height: 99px;
+    background: url('../img/selo.png') no-repeat center;
+    background-size: contain;
+    transition: 0.3s;
+}
+
+.selo:hover {
+    transform: scale(1.1);
+}
+
+.selo-texto {
+    position: absolute;
+    bottom: 32px;
+    left: 55%;
+    transform: translateX(-50%) rotate(-12deg);
+    font-size: 0.8rem;
+    color: #ebded1;
+    font-style: italic;
+}
+
+/* =================================================
+   TIPOGRAFIA
+================================================= */
+.nome {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    color: green;
+    text-align: center;
+}
+
+.nome span {
+    display: block;
+    font-size: 5rem;
+}
+
+.subtitulo {
+    margin-top: 20px;
+    font-size: 1.4rem;
+    color: #967238;
+    text-align: center;
+}
+
+.texto,
+.final {
+    max-width: 700px;
+    text-align: center;
+    padding: 20px;
+    line-height: 1.8;
+}
+
+.texto {
+    font-size: 1.4rem;
+}
+
+.final {
+    font-size: 1.3rem;
+}
+
+.destaque {
+    text-align: center;
+    font-size: 2rem;
+    color: #9a6b1f;
+}
+
+.destaque strong {
+    display: block;
+    margin: 10px 0;
+    font-size: 2.4rem;
+}
+
+/* =================================================
+   SCENE 5
+================================================= */
+#scene5 {
+    flex-direction: column;
+}
+
+#scene5 .final {
+    margin-bottom: 10px;
+}
+
+/* AÇÕES */
+.acoes {
+    display: flex;
+    gap: 30px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.acao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: green;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.acao:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+.icone {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.icone i {
+    color: #fd0202;
+    transition: 0.3s;
+}
+
+.acao:hover .icone i {
+    transform: scale(1.2);
+}
+
+/* =================================================
+   NAVEGAÇÃO
+================================================= */
+.nav {
+    position: absolute;
+    bottom: 25px;
+
+    width: 40px;
+    height: 40px;
+
+    cursor: pointer;
+    z-index: 5;
+
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.nav:hover {
+    opacity: 1;
+    transform: translateY(-5px);
+}
+
+.nav.next {
+    right: 20px;
+}
+
+.nav.next::before {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.nav.prev {
+    left: 20px;
+}
+
+.nav.prev::before {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* =================================================
+   SCENE 6
+================================================= */
+#scene6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content-scene6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 40px 20px 80px;
+    text-align: center;
+}
+
+.topo-scene6 {
+    margin-top: 20px;
+}
+
+.overlay-text-scene6 {
+    font-size: 2.5rem;
+    color: green;
+    margin-bottom: 10px;
+}
+
+#scene6 .destaque {
+    font-size: 1.6rem;
+    margin-top: 10px;
+}
+
+.baixo-scene6 {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.frame img {
+    width: 330px;
+    max-width: 99%;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+/* =================================================
+   RODAPÉ (AJUSTADO)
+================================================= */
+.footer-credit {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+.footer-credit a {
+    color: green;
+    text-decoration: none;
+}
+
+/* ESCONDE FOOTER NA SCENE 1 */
+#scene1.active ~ .footer-credit {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* =================================================
+   RESPONSIVO MOBILE
+================================================= */
+@media (max-width: 768px) {
+
+    .folha-esquerda {
+        width: 45%;
+    }
+
+    .selo-container {
+        left: 45%;
+    }
+
+    .nome {
+        font-size: 2.5rem;
+    }
+
+    .nome span {
+        font-size: 3rem;
+    }
+
+    .texto {
+        font-size: 1.1rem;
+    }
+
+    .destaque {
+        font-size: 1.5rem;
+    }
+
+    .acoes {
+        gap: 20px;
+    }
+}
+
+/* =================================================
+   MODO IPHONE (DESKTOP/TABLET)
+================================================= */
+@media (min-width: 768px) {
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #e5e2db;
+    }
+
+    .container {
+        width: 390px;
+        height: 844px;
+
+        border-radius: 40px;
+        overflow: hidden;
+
+        box-shadow: 
+            0 20px 60px rgba(0,0,0,0.25),
+            inset 0 0 0 8px #000;
+
+        position: relative;
+    }
+
+    .scene {
+        border-radius: 40px;
+    }
+
+    .container::before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: 120px;
+        height: 25px;
+
+        background: #000;
+        border-radius: 20px;
+        z-index: 10;
+    }
+}
