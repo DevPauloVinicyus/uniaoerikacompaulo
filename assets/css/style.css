@@ -296,8 +296,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 95%;
-    width: 95%;
+    height: 90%;
+    width: 90%;
     padding: 40px 20px 80px;
     text-align: center;
 }
@@ -324,8 +324,8 @@ body {
 }
 
 .frame img {
-    width: 270px;
-    max-width: 99%;
+    width: 250px;
+    max-width: 90%;
     border-radius: 20px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.2);
 }
@@ -369,25 +369,109 @@ body {
     }
 
     .nome {
-        font-size: 2.5rem;
+        font-size: 7rem;
     }
 
     .nome span {
-        font-size: 3rem;
+        font-size: 7rem;
+    }
+
+    .subtitulo {
+        font-size: 1.8rem;
+        color: #6e4501;
     }
 
     .texto {
-        font-size: 1.1rem;
+        font-size: 1.7rem;
+        color: #6e4501;
+    }
+
+    .final {
+        font-size: 1.5rem;
+        color: #6e4501;
     }
 
     .destaque {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
     }
 
-    .acoes {
-        gap: 20px;
-    }
+   /* AÇÕES */
+.acoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px; /* aumenta distância entre os links */
+    margin-top: 25px;
 }
+
+/* LINK */
+.acao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-decoration: none;
+    color: green;
+
+    font-size: 1.1rem; /* aumenta texto */
+    transition: transform 0.3s ease;
+}
+
+/* ÍCONE */
+.icone {
+    font-size: 2.6rem; /* aumenta ícones */
+    margin-bottom: 8px;
+}
+}
+
+/* =================================================
+   SCENE 6
+================================================= */
+
+#scene6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 35px 10px 70px;
+
+    overflow: hidden;
+}
+
+/* TÍTULO */
+.titulo-final {
+    font-size: 2rem;
+    color: #6e4501;
+
+    text-align: center;
+
+    margin-bottom: 10px;
+    z-index: 3;
+}
+
+/* CONTAINER FOTO */
+.frame-full {
+    width: 100%;
+    height: calc(100dvh - 140px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FOTO GIGANTE */
+.frame-full img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 28px;
+
+    filter: drop-shadow(0 15px 35px rgba(0,0,0,0.22));
+}
+
+
 
 /* =================================================
    MODO IPHONE (DESKTOP/TABLET)
