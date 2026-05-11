@@ -18,6 +18,7 @@ body {
 .container {
     width: 100%;
     height: 100dvh;
+
     position: relative;
     overflow: hidden;
 }
@@ -28,14 +29,84 @@ body {
 .bg-wrapper {
     position: absolute;
     inset: 0;
+
     z-index: 0;
 }
 
 .bg-img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     opacity: 0.2;
+}
+
+/* =================================================
+   NAVEGAÇÃO
+================================================= */
+.nav {
+    position: absolute;
+
+    bottom: 25px;
+
+    width: 40px;
+    height: 40px;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    opacity: 0.6;
+
+    transition: all 0.3s ease;
+}
+
+.nav:hover {
+    opacity: 1;
+    transform: translateY(-5px);
+}
+
+.nav.next {
+    right: 20px;
+}
+
+.nav.next::before {
+    content: "";
+
+    position: absolute;
+
+    width: 12px;
+    height: 12px;
+
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.nav.prev {
+    left: 20px;
+}
+
+.nav.prev::before {
+    content: "";
+
+    position: absolute;
+
+    width: 12px;
+    height: 12px;
+
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 /* =================================================
@@ -69,6 +140,7 @@ body {
 
 .folha-esquerda {
     position: absolute;
+
     top: 0;
     left: 0;
 
@@ -76,15 +148,19 @@ body {
     height: 100%;
 
     background: #ffffff;
+
     box-shadow: 20px 0 40px rgba(0,0,0,0.15);
 
     z-index: 2;
+
     transition: transform 1s ease;
 }
 
 .folha-esquerda::after {
     content: "";
+
     position: absolute;
+
     top: 0;
     right: -60px;
 
@@ -99,21 +175,29 @@ body {
     );
 }
 
-/* SELO */
+/* =================================================
+   SELO
+================================================= */
 .selo-container {
     position: absolute;
+
     top: 50%;
     left: 40%;
+
     transform: translate(-50%, -50%);
+
     z-index: 10;
+
     cursor: pointer;
 }
 
 .selo {
     width: 99px;
     height: 99px;
+
     background: url('../img/selo.png') no-repeat center;
     background-size: contain;
+
     transition: 0.3s;
 }
 
@@ -123,11 +207,16 @@ body {
 
 .selo-texto {
     position: absolute;
+
     bottom: 32px;
     left: 55%;
+
     transform: translateX(-50%) rotate(-12deg);
+
     font-size: 0.8rem;
+
     color: #ebded1;
+
     font-style: italic;
 }
 
@@ -136,28 +225,38 @@ body {
 ================================================= */
 .nome {
     font-family: 'Great Vibes', cursive;
+
     font-size: 4rem;
+
     color: green;
+
     text-align: center;
 }
 
 .nome span {
     display: block;
+
     font-size: 5rem;
 }
 
 .subtitulo {
     margin-top: 20px;
+
     font-size: 1.4rem;
+
     color: #967238;
+
     text-align: center;
 }
 
 .texto,
 .final {
     max-width: 700px;
+
     text-align: center;
+
     padding: 20px;
+
     line-height: 1.8;
 }
 
@@ -171,14 +270,43 @@ body {
 
 .destaque {
     text-align: center;
+
     font-size: 2rem;
+
     color: #9a6b1f;
 }
 
 .destaque strong {
     display: block;
+
     margin: 10px 0;
+
     font-size: 2.4rem;
+}
+
+/* =================================================
+   SCENE 4
+================================================= */
+#scene4 {
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+#scene4 .destaque {
+    margin-bottom: 20px;
+}
+
+#scene4 .final {
+    max-width: 320px;
+
+    font-size: 1.2rem;
+    line-height: 1.7;
 }
 
 /* =================================================
@@ -186,172 +314,176 @@ body {
 ================================================= */
 #scene5 {
     flex-direction: column;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 15px 110px;
+
+    overflow: hidden;
 }
 
-#scene5 .final {
-    margin-bottom: 10px;
-}
+/* CONTEÚDO */
+.content-scene5 {
+    position: relative;
 
-/* AÇÕES */
-.acoes {
     display: flex;
-    gap: 30px;
-    margin-top: 10px;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+}
+
+/* TÍTULO */
+#scene5 .destaque {
+    position: relative;
+
+    z-index: 3;
+
+    margin-top: 8px;
+
+    max-width: 340px;
+
+    font-size: 1.1rem;
+    line-height: 1.4;
+
+    color: #6f7440;
+
+    background: rgba(236,236,220,0.92);
+
+    padding: 8px 18px;
+
+    border-radius: 16px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+/* =================================================
+   IMAGEM
+================================================= */
+.frame {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
     justify-content: center;
+    align-items: flex-end;
+}
+
+.frame img {
+    width: 125%;
+    max-width: unset;
+
+    height: auto;
+
+    object-fit: cover;
+
+    margin-bottom: -10px;
+}
+
+/* =================================================
+   AÇÕES
+================================================= */
+.acoes {
+    position: absolute;
+
+    bottom: 55px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 45px;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 5;
 }
 
 .acao {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     text-decoration: none;
-    color: green;
-    font-size: 0.9rem;
+
+    color: #6f7440;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    text-align: center;
+
     transition: transform 0.3s ease;
 }
 
 .acao:hover {
-    transform: translateY(-5px) scale(1.05);
-}
-
-.icone {
-    font-size: 2rem;
-    margin-bottom: 5px;
-}
-
-.icone i {
-    color: #fd0202;
-    transition: 0.3s;
-}
-
-.acao:hover .icone i {
-    transform: scale(1.2);
-}
-
-/* =================================================
-   NAVEGAÇÃO
-================================================= */
-.nav {
-    position: absolute;
-    bottom: 25px;
-
-    width: 40px;
-    height: 40px;
-
-    cursor: pointer;
-    z-index: 5;
-
-    opacity: 0.6;
-    transition: all 0.3s ease;
-}
-
-.nav:hover {
-    opacity: 1;
     transform: translateY(-5px);
 }
 
-.nav.next {
-    right: 20px;
-}
+/* ÍCONES */
+.icone {
+    width: 72px;
+    height: 72px;
 
-.nav.next::before {
-    content: "";
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    border-top: 2px solid black;
-    border-right: 2px solid black;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.nav.prev {
-    left: 20px;
-}
-
-.nav.prev::before {
-    content: "";
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    border-top: 2px solid black;
-    border-left: 2px solid black;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-/* =================================================
-   SCENE 6
-================================================= */
-#scene6 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.content-scene6 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 90%;
-    width: 90%;
-    padding: 40px 20px 80px;
-    text-align: center;
-}
-
-.topo-scene6 {
-    margin-top: 20px;
-}
-
-.overlay-text-scene6 {
-    font-size: 2.5rem;
-    color: green;
-    margin-bottom: 10px;
-}
-
-#scene6 .destaque {
-    font-size: 1.6rem;
-    margin-top: 10px;
-}
-
-.baixo-scene6 {
-    margin-top: 20px;
     display: flex;
     justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #8a8f4b;
+
+    color: #fff;
+
+    font-size: 2rem;
+
+    margin-bottom: 10px;
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-.frame img {
-    width: 250px;
-    max-width: 90%;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+.icone i {
+    color: #fff;
 }
 
 /* =================================================
-   RODAPÉ (AJUSTADO)
+   RODAPÉ
 ================================================= */
 .footer-credit {
     position: absolute;
+
     bottom: 10px;
+
     width: 100%;
+
     text-align: center;
+
     font-size: 0.8rem;
 
     opacity: 1;
+
     transition: opacity 0.4s ease;
 }
 
 .footer-credit a {
     color: green;
+
     text-decoration: none;
 }
 
 /* ESCONDE FOOTER NA SCENE 1 */
 #scene1.active ~ .footer-credit {
     opacity: 0;
+
     pointer-events: none;
 }
 
@@ -369,109 +501,60 @@ body {
     }
 
     .nome {
-        font-size: 7rem;
-    }
-
-    .nome span {
-        font-size: 7rem;
-    }
-
-    .subtitulo {
-        font-size: 1.8rem;
-        color: #6e4501;
-    }
-
-    .texto {
-        font-size: 1.7rem;
-        color: #6e4501;
-    }
-
-    .final {
-        font-size: 1.5rem;
-        color: #6e4501;
-    }
-
-    .destaque {
         font-size: 2.5rem;
     }
 
-   /* AÇÕES */
-.acoes {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 45px; /* aumenta distância entre os links */
-    margin-top: 25px;
+    .nome span {
+        font-size: 3rem;
+    }
+
+    .texto {
+        font-size: 1.1rem;
+    }
+
+    .destaque {
+        font-size: 1.5rem;
+    }
+
+    #scene4 .final {
+        font-size: 1.1rem;
+
+        max-width: 90%;
+    }
+
+    #scene5 {
+        padding: 15px 10px 120px;
+    }
+
+    #scene5 .destaque {
+        max-width: 320px;
+
+        font-size: 0.95rem;
+
+        padding: 8px 14px;
+    }
+
+    .frame img {
+        width: 150%;
+    }
+
+    .acoes {
+        gap: 35px;
+
+        bottom: 70px;
+    }
+
+    .icone {
+        width: 68px;
+        height: 68px;
+
+        font-size: 1.9rem;
+    }
+
+    .acao {
+        font-size: 0.78rem;
+    }
 }
-
-/* LINK */
-.acao {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    text-decoration: none;
-    color: green;
-
-    font-size: 1.1rem; /* aumenta texto */
-    transition: transform 0.3s ease;
-}
-
-/* ÍCONE */
-.icone {
-    font-size: 2.6rem; /* aumenta ícones */
-    margin-bottom: 8px;
-}
-}
-
-/* =================================================
-   SCENE 6
-================================================= */
-
-#scene6 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    padding: 35px 10px 70px;
-
-    overflow: hidden;
-}
-
-/* TÍTULO */
-.titulo-final {
-    font-size: 2rem;
-    color: #6e4501;
-
-    text-align: center;
-
-    margin-bottom: 10px;
-    z-index: 3;
-}
-
-/* CONTAINER FOTO */
-.frame-full {
-    width: 100%;
-    height: calc(100dvh - 140px);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* FOTO GIGANTE */
-.frame-full img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-
-    border-radius: 28px;
-
-    filter: drop-shadow(0 15px 35px rgba(0,0,0,0.22));
-}
-
-
 
 /* =================================================
    MODO IPHONE (DESKTOP/TABLET)
@@ -480,9 +563,12 @@ body {
 
     body {
         display: flex;
+
         justify-content: center;
         align-items: center;
+
         height: 100vh;
+
         background: #e5e2db;
     }
 
@@ -491,31 +577,42 @@ body {
         height: 844px;
 
         border-radius: 40px;
+
         overflow: hidden;
 
-        box-shadow: 
+        position: relative;
+
+        box-shadow:
             0 20px 60px rgba(0,0,0,0.25),
             inset 0 0 0 8px #000;
-
-        position: relative;
     }
 
     .scene {
         border-radius: 40px;
     }
 
+    /* NOTCH */
     .container::before {
         content: "";
+
         position: absolute;
+
         top: 10px;
         left: 50%;
+
         transform: translateX(-50%);
 
         width: 120px;
         height: 25px;
 
         background: #000;
+
         border-radius: 20px;
+
         z-index: 10;
+    }
+
+    .frame img {
+        width: 145%;
     }
 }
