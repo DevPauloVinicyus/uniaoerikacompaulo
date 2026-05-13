@@ -249,8 +249,7 @@ body {
     text-align: center;
 }
 
-.texto,
-.final {
+.texto{
     max-width: 700px;
 
     text-align: center;
@@ -262,10 +261,6 @@ body {
 
 .texto {
     font-size: 1.4rem;
-}
-
-.final {
-    font-size: 1.3rem;
 }
 
 .destaque {
@@ -281,7 +276,7 @@ body {
 
     margin: 10px 0;
 
-    font-size: 2.4rem;
+    font-size: 2.3rem;
 }
 
 /* =================================================
@@ -295,18 +290,16 @@ body {
 
     text-align: center;
 
-    padding: 20px;
+    padding: 35px;
 }
 
 #scene4 .destaque {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 #scene4 .final {
     max-width: 320px;
-
-    font-size: 1.2rem;
-    line-height: 1.7;
+    line-height: 1.6;
 }
 
 /* =================================================
@@ -384,7 +377,7 @@ body {
 
     object-fit: cover;
 
-    margin-bottom: -10px;
+    margin-bottom: -70px;
 }
 
 /* =================================================
@@ -487,6 +480,7 @@ body {
     pointer-events: none;
 }
 
+
 /* =================================================
    RESPONSIVO MOBILE
 ================================================= */
@@ -501,60 +495,61 @@ body {
     }
 
     .nome {
-        font-size: 2.5rem;
+        font-size: 7rem;
     }
 
     .nome span {
-        font-size: 3rem;
+        font-size: 7rem;
+    }
+
+    .subtitulo {
+        font-size: 1.8rem;
+        color: #422a04;
     }
 
     .texto {
-        font-size: 1.1rem;
+        font-size: 1.7rem;
+        color: #422a04;
+    }
+
+    .final {
+        font-size: 1.5rem;
+        color: #422a04;
     }
 
     .destaque {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
-    #scene4 .final {
-        font-size: 1.1rem;
-
-        max-width: 90%;
-    }
-
-    #scene5 {
-        padding: 15px 10px 120px;
-    }
-
-    #scene5 .destaque {
-        max-width: 320px;
-
-        font-size: 0.95rem;
-
-        padding: 8px 14px;
-    }
-
-    .frame img {
-        width: 150%;
-    }
-
-    .acoes {
-        gap: 35px;
-
-        bottom: 70px;
-    }
-
-    .icone {
-        width: 68px;
-        height: 68px;
-
-        font-size: 1.9rem;
-    }
-
-    .acao {
-        font-size: 0.78rem;
-    }
+   /* AÇÕES */
+.acoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px; /* aumenta distância entre os links */
+    margin-top: 25px;
 }
+
+/* LINK */
+.acao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-decoration: none;
+    color: green;
+
+    font-size: 1.1rem; /* aumenta texto */
+    transition: transform 0.3s ease;
+}
+
+/* ÍCONE */
+.icone {
+    font-size: 2.6rem; /* aumenta ícones */
+    margin-bottom: 8px;
+}
+}
+
 
 /* =================================================
    MODO IPHONE (DESKTOP/TABLET)
